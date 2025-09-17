@@ -1,0 +1,714 @@
+/* General Body and Container Styles (Keep existing) */
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Navigation Bar Styles (Keep existing) */
+.navbar {
+  background: #2563eb;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-links li a,
+.navbar-links li button {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links li a:hover,
+.navbar-links li button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-user {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.navbar-button {
+  background: #1c4ed8;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Layout for Dashboard/Planner Page (Keep existing) */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Styles (Keep existing) */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.card h2, .card h3 {
+  color: #2563eb;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Form Styles (Keep existing) */
+input, button, select, textarea {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+/* General Button Styles */
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease, border-color 0.3s ease, color 0.3s ease;
+  text-decoration: none; /* For Link components acting as buttons */
+  text-align: center;
+  border: none; /* Default to no border */
+}
+
+.button.primary-button {
+  background: #2563eb;
+  color: white;
+}
+
+.button.primary-button:hover {
+  background: #1c4ed8;
+  transform: translateY(-1px);
+}
+
+.button.secondary-button {
+  background: #e0e7ff; /* Light blue */
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.button.secondary-button:hover {
+  background: #c7d2fe;
+  transform: translateY(-1px);
+}
+
+.button.delete-button {
+  background: #ef4444; /* Red */
+  color: white;
+}
+
+.button.delete-button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+button:disabled, .button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+/* Small text and links (Keep existing) */
+.small {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+a.link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+a.link:hover {
+  color: #1c4ed8;
+  text-decoration: underline;
+}
+
+/* Specific component adjustments (Keep existing) */
+.login-signup-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.login-signup-container .card {
+  flex: 1;
+  max-width: 450px;
+}
+
+.login-signup-container .card:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-signup-container .card:last-child h3 {
+  margin-bottom: 10px;
+}
+
+.login-signup-container .card:last-child p {
+  margin-bottom: 20px;
+}
+
+.login-signup-container .card:last-child a.link {
+  padding: 10px 20px;
+  background-color: #e0e7ff;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #2563eb;
+  transition: background-color 0.3s ease;
+}
+
+.login-signup-container .card:last-child a.link:hover {
+  background-color: #c7d2fe;
+  text-decoration: none;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Itinerary View specific styles (Keep existing) */
+.itinerary-view-header {
+  margin-bottom: 20px;
+}
+
+.itinerary-view-header h2 {
+  margin-bottom: 5px;
+}
+
+.weather-forecast-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e0e7ff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.weather-cards-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.weather-card {
+  min-width: 120px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.weather-card div {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.weather-card .small {
+  font-size: 12px;
+}
+
+.day-card {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.day-card strong {
+  font-size: 18px;
+  color: #2563eb;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.day-card ul {
+  list-style: disc;
+  margin-left: 20px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.day-card li {
+  margin-bottom: 5px;
+  color: #4b5563;
+}
+
+.day-card .small {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.itinerary-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.itinerary-actions button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.itinerary-actions button:first-child {
+  background: #2563eb;
+  color: white;
+}
+
+.itinerary-actions button:last-child {
+  background: #6b7280;
+  color: white;
+}
+
+.itinerary-actions button:last-child:hover {
+  background: #4b5563;
+}
+
+/* Dashboard specific styles (These will be removed if Dashboard.jsx is deleted) */
+/* If you keep Dashboard.jsx for other purposes, you might want to rename these classes */
+/* .dashboard-trip-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-trip-item:last-child {
+  border-bottom: none;
+}
+
+.dashboard-trip-item div strong {
+  font-size: 17px;
+  color: #2563eb;
+}
+
+.dashboard-trip-item .small {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.dashboard-trip-item .link {
+  font-size: 14px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.dashboard-trip-item button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-trip-item button:hover {
+  background: #dc2626;
+} */
+
+
+/* NEW: MyTripsPage specific styles */
+.my-trips-page-container {
+  max-width: 1000px; /* Wider container for the grid */
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 32px;
+  color: #2563eb;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.loading-message, .no-trips-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #555;
+}
+
+.no-trips-message p {
+  margin-bottom: 15px;
+}
+
+.no-trips-message .button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+}
+
+.trip-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 25px; /* Space between cards */
+}
+
+.trip-card-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push actions to bottom */
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trip-card-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.trip-title {
+  font-size: 22px;
+  color: #2563eb;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  word-break: break-word; /* Prevent long titles from overflowing */
+}
+
+.trip-dates {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.trip-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Push to the bottom of the card */
+}
+
+.trip-actions .button {
+  flex: 1; /* Distribute space evenly */
+  font-size: 15px;
+  padding: 10px 15px;
+}
+
+
+/* Responsive adjustments (Keep existing and add for new elements) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    margin-top: 15px;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links li a,
+  .navbar-links li button {
+    display: block;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar-user {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .login-signup-container {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .login-signup-container .card {
+    max-width: 100%;
+  }
+
+  .itinerary-actions, .trip-page-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .my-trips-page-container {
+    padding: 15px;
+  }
+
+  .page-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .trip-cards-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+
+  .trip-actions .button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand a {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  input, button, select, textarea {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .button.primary-button, .button.secondary-button, .button.delete-button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .weather-cards-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .weather-card {
+    min-width: 100px;
+    width: 48%;
+  }
+}
+
+
+
+
+/* NEW: TripPage specific styles */
+.trip-page-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.trip-page-title {
+  font-size: 30px;
+  color: #2563eb;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.trip-page-dates {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.itinerary-section {
+  margin-top: 20px;
+}
+
+.trip-page-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  justify-content: flex-start; /* Align buttons to the start */
+}
+
+.trip-page-actions .button {
+  padding: 10px 18px;
+  font-size: 16px;
+}
+
+/* Adjustments for existing elements within TripPage */
+.weather-forecast-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e0e7ff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.weather-cards-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.weather-card {
+  min-width: 120px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.weather-card div {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.weather-card .small {
+  font-size: 12px;
+}
+
+.day-card {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.day-card strong {
+  font-size: 18px;
+  color: #2563eb;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.day-card ul {
+  list-style: disc;
+  margin-left: 20px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.day-card li {
+  margin-bottom: 5px;
+  color: #4b5563;
+}
+
+.day-card .small {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Responsive adjustments for TripPage */
+@media (max-width: 768px) {
+  .trip-page-container {
+    padding: 15px;
+  }
+  .trip-page-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .trip-page-actions .button {
+    width: 100%;
+  }
+}
