@@ -1,5 +1,5 @@
 import axios from "axios";
-const API = "https://travel-buddy-c87w.onrender.com" || import.meta.env.VITE_API_URL || "http://localhost:5000/api" ;
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api" ;
 
 export async function signup(data){ const res = await axios.post(`${API}/auth/signup`, data); return res.data; }
 export async function login(data){ const res = await axios.post(`${API}/auth/login`, data); return res.data; }
